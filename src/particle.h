@@ -5,15 +5,16 @@
 
 class particle{
     
-    private:
-        int x;
-        int y;
-        int r;
+private:
+    int x;
+    int y;
+    int r;
     
-    public:
-        particle();
-        void draw();
-        void update();
+public:
+    particle();
+    void draw();
+    void update();
+    
 };
 
 //#endif

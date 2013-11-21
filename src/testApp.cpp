@@ -3,15 +3,9 @@
 //--------------------------------------------------------------------------------------------------------------
 void testApp::setup(){
 
-    
-    
-    
-    
     ofSetVerticalSync(true);
-    
     ofBackground(30);
-    
-    mng.setup(1280, 720);
+    mng.setup(1440,900);
     
     layer1 = mng.createLayer<TestLayer1>();
     layer2 = mng.createLayer<TestLayer2>();
@@ -29,15 +23,8 @@ void testApp::setup(){
 
 //--------------------------------------------------------------------------------------------------------------
 void testApp::update(){
+    
     mng.update();
-    
-//    ofSetWindowTitle(ofToString(ofGetFrameRate(), 2));
-
-//    for (int i = 0; i < NUM; i++) {
-//        p[i].update();
-//    }
-    
-    
     
    }
 
@@ -46,17 +33,18 @@ void testApp::draw(){
     
 //        ofTranslate(0,ofGetHeight(),0);
 //        ofRotateZ(-90);
+    
     ofEnableAlphaBlending();
-    
     mng.draw();
-    
-        //	colorImg.draw(0,0);
+
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-    if (key == '1') layer1->moveUp();
-    if (key == '2') layer1->moveDown();
+    
+//    if (key == '1') layer1->moveUp();
+//    if (key == '2') layer1->moveDown();
+
 }
 
 //--------------------------------------------------------------

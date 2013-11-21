@@ -1,16 +1,10 @@
-//
-//  TestLayer3.cpp
-//  waterfall
-//
-//  Created by Lancelot on 2013/11/21.
-//
-//
-
 #include "TestLayer3.h"
+
+//--------------------------------------------------------------------------------------------------------------
 void TestLayer3::setup(){
+    
     ofSetFrameRate(15);
     ofEnableAlphaBlending();
-    
     
     vidPlayer.loadMovie("kegonfalls.mov");
     vidPlayer.play();
@@ -23,12 +17,16 @@ void TestLayer3::setup(){
 	grayDiff.allocate(480,312);
     compositeImg.allocate(480, 312);
     
-    
 	bLearnBakground = true;
 	threshold = 100;
+    
 }
+
+//--------------------------------------------------------------------------------------------------------------
 void TestLayer3::update(){
+    
     vidPlayer.update();
+    
     //      ********************    CONVERT IMAGE   ********************
     
     colorImg.setFromPixels(vidPlayer.getPixels(), 480,312);
@@ -74,15 +72,19 @@ void TestLayer3::update(){
     
     
     //          ********************   PHASE 1   ********************
+    
     if(end0){
         if(time1 < 500){
+            
             for (int i=0; i<nPixels; i++) {
                 if (g[i]<255){ g[i]++; }else{ g[i]=0; }
             }
             time1++;
             if(time1 == 200)bLearnBakground = true;
             if(threshold > 80) threshold --;
+            
         }else{
+            
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
@@ -90,13 +92,17 @@ void TestLayer3::update(){
             }
             if(threshold >= 0) threshold --;
             end1 = true;
+            
         }
     }
     
     //          ********************   PHASE 2   ********************
+    
     if (end1 == true){
+        
         if (time2 < 500) {
             time2++;
+            
         }else{
             
             for (int i=0; i<nPixels; i++) {
@@ -107,14 +113,19 @@ void TestLayer3::update(){
             if(threshold < 20) threshold ++;
             end0 = false;
             end2 = true;
+            
         }
     }
     
     //          ********************   PHASE 3   ********************
+    
     if (end2 == true){
+        
         if (time3 < 500) {
             time3++;
+            
         }else{
+            
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]++; }else{ g[i]=0; }
@@ -123,14 +134,19 @@ void TestLayer3::update(){
             if(threshold < 100) threshold +=2;
             end1 = false;
             end3 = true;
+            
         }
     }
     
     //          ********************   PHASE 4   ********************
+    
     if (end3 == true){
+        
         if (time4 < 500) {
             time4++;
+            
         }else{
+            
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]++; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.5; }else{ g[i]=0; }
@@ -139,30 +155,22 @@ void TestLayer3::update(){
             if(threshold > 30) threshold --;
             end2 = false;
             end4 = true;
+            
         }
     }
     
     
     
     compositeImg.setFromPixels(compositeImgPixels,480,312);
-
+    
 }
-void TestLayer3::draw()
-{
+
+//--------------------------------------------------------------------------------------------------------------
+void TestLayer3::draw(){
+    
     ofBackground(0, 0, 0, 0);
     compositeImg.draw(0,0,ofGetWidth(),ofGetHeight());
     contourFinder.draw(0,0,ofGetWidth(),ofGetHeight());
-    
-    
-    
-    //          ********************    PARTICLES     ********************
-    
-    //        ofSetColor(0, 0, 0, 100);
-    //        ofRect(0, 0, ofGetWidth(), ofGetHeight());
-    //        for (int i = 0; i < NUM; i++) {
-    //            p[i].draw();
-    //        }
-    
     
     
     
@@ -192,5 +200,4 @@ void TestLayer3::draw()
     
     
     
-
 }
