@@ -1,5 +1,5 @@
-#ifndef _OF_PARTICLE
-#define _OF_PARTICLE
+//#ifndef _OF_PARTICLE
+//#define _OF_PARTICLE
 
 #include "ofMain.h"
 
@@ -16,4 +16,4 @@ class particle{
         void update();
 };
 
-#endif
+//#endif

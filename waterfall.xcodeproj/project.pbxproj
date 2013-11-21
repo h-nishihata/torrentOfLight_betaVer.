@@ -11,6 +11,11 @@
 		1d5f3298c2fa073628012944 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021 /* ofxCvContourFinder.cpp */; };
 		250a95ba26587be85db0a353 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ce9c7160245b19131dae6128 /* ofxCvColorImage.cpp */; };
 		63020f16c7e8ded980111241 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c6151136d101f857dae12722 /* ofxCvImage.cpp */; };
+		739DA025183DC9ED00D851FC /* TestLayer1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 739DA023183DC9ED00D851FC /* TestLayer1.cpp */; };
+		739DA03E183DCA0A00D851FC /* ofxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 739DA037183DCA0A00D851FC /* ofxLayer.cpp */; };
+		739DA03F183DCA0A00D851FC /* ofxLayerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 739DA03A183DCA0A00D851FC /* ofxLayerManager.cpp */; };
+		739DA045183DCB6500D851FC /* TestLayer2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 739DA043183DCB6500D851FC /* TestLayer2.cpp */; };
+		739DA04B183DD64000D851FC /* TestLayer3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 739DA049183DD64000D851FC /* TestLayer3.cpp */; };
 		73DC90461828D844008CF6C0 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73DC90441828D844008CF6C0 /* particle.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -102,6 +107,17 @@
 		7101cf2125b8b2bf46aa2662 /* cxcore.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cxcore.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/cxcore.hpp; sourceTree = SOURCE_ROOT; };
 		71c98c3f44d63b39f1482a54 /* background_segm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = background_segm.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/video/background_segm.hpp; sourceTree = SOURCE_ROOT; };
 		722542bcdc94162b6a8b9b72 /* defines.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = defines.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/defines.h; sourceTree = SOURCE_ROOT; };
+		739DA023183DC9ED00D851FC /* TestLayer1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer1.cpp; sourceTree = "<group>"; };
+		739DA024183DC9ED00D851FC /* TestLayer1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer1.h; sourceTree = "<group>"; };
+		739DA037183DCA0A00D851FC /* ofxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayer.cpp; sourceTree = "<group>"; };
+		739DA038183DCA0A00D851FC /* ofxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayer.h; sourceTree = "<group>"; };
+		739DA039183DCA0A00D851FC /* ofxLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerConstants.h; sourceTree = "<group>"; };
+		739DA03A183DCA0A00D851FC /* ofxLayerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayerManager.cpp; sourceTree = "<group>"; };
+		739DA03B183DCA0A00D851FC /* ofxLayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerManager.h; sourceTree = "<group>"; };
+		739DA043183DCB6500D851FC /* TestLayer2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer2.cpp; sourceTree = "<group>"; };
+		739DA044183DCB6500D851FC /* TestLayer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer2.h; sourceTree = "<group>"; };
+		739DA049183DD64000D851FC /* TestLayer3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer3.cpp; sourceTree = "<group>"; };
+		739DA04A183DD64000D851FC /* TestLayer3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer3.h; sourceTree = "<group>"; };
 		73DC90441828D844008CF6C0 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
 		73DC90451828D844008CF6C0 /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = particle.h; sourceTree = "<group>"; };
 		758f19335d4e46a5e0de449f /* kdtree_single_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kdtree_single_index.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/kdtree_single_index.h; sourceTree = SOURCE_ROOT; };
@@ -362,6 +378,27 @@
 			name = opencv;
 			sourceTree = "<group>";
 		};
+		739DA026183DCA0A00D851FC /* ofxLayer-master */ = {
+			isa = PBXGroup;
+			children = (
+				739DA036183DCA0A00D851FC /* src */,
+			);
+			name = "ofxLayer-master";
+			path = "../../../addons/ofxLayer-master";
+			sourceTree = "<group>";
+		};
+		739DA036183DCA0A00D851FC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				739DA037183DCA0A00D851FC /* ofxLayer.cpp */,
+				739DA038183DCA0A00D851FC /* ofxLayer.h */,
+				739DA039183DCA0A00D851FC /* ofxLayerConstants.h */,
+				739DA03A183DCA0A00D851FC /* ofxLayerManager.cpp */,
+				739DA03B183DCA0A00D851FC /* ofxLayerManager.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		86fec009e2721d0fb23338d7 /* features2d */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +430,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				739DA026183DCA0A00D851FC /* ofxLayer-master */,
 				a0b90d3b0adb9c1716816714 /* ofxOpenCv */,
 			);
 			name = addons;
@@ -466,6 +504,12 @@
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				73DC90441828D844008CF6C0 /* particle.cpp */,
 				73DC90451828D844008CF6C0 /* particle.h */,
+				739DA023183DC9ED00D851FC /* TestLayer1.cpp */,
+				739DA024183DC9ED00D851FC /* TestLayer1.h */,
+				739DA043183DCB6500D851FC /* TestLayer2.cpp */,
+				739DA044183DCB6500D851FC /* TestLayer2.h */,
+				739DA049183DD64000D851FC /* TestLayer3.cpp */,
+				739DA04A183DD64000D851FC /* TestLayer3.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -659,14 +703,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739DA045183DCB6500D851FC /* TestLayer2.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
+				739DA03F183DCA0A00D851FC /* ofxLayerManager.cpp in Sources */,
 				fb09c6b2a1da0ea217240cb8 /* ofxCvGrayscaleImage.cpp in Sources */,
 				250a95ba26587be85db0a353 /* ofxCvColorImage.cpp in Sources */,
+				739DA04B183DD64000D851FC /* TestLayer3.cpp in Sources */,
 				169d3c72fde6c5590a1616f5 /* ofxCvFloatImage.cpp in Sources */,
 				d3301f6a0b43bb293ed97c1d /* ofxCvShortImage.cpp in Sources */,
 				1d5f3298c2fa073628012944 /* ofxCvContourFinder.cpp in Sources */,
+				739DA025183DC9ED00D851FC /* TestLayer1.cpp in Sources */,
 				e212c821d1064b92dd953a42 /* ofxCvHaarFinder.cpp in Sources */,
+				739DA03E183DCA0A00D851FC /* ofxLayer.cpp in Sources */,
 				63020f16c7e8ded980111241 /* ofxCvImage.cpp in Sources */,
 				73DC90461828D844008CF6C0 /* particle.cpp in Sources */,
 			);
