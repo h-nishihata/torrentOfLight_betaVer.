@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F77EC6C8-D155-474B-B025-13B8621AD0A0</string>
+	<string>B6E77136-3913-414F-936C-7EC18A4976F3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>waterfall</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7E741F90-209E-4F03-8724-AB778BC62065</key>
-		<string>https://github.com/kumapapa/waterfall</string>
+		<key>56832E6E-9090-4489-90F8-6CF7DBDDD483</key>
+		<string>https://github.com/h-nishihata/waterfall</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>waterfall.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7E741F90-209E-4F03-8724-AB778BC62065</key>
+		<key>56832E6E-9090-4489-90F8-6CF7DBDDD483</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kumapapa/waterfall</string>
+	<string>https://github.com/h-nishihata/waterfall</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7E741F90-209E-4F03-8724-AB778BC62065</string>
+	<string>56832E6E-9090-4489-90F8-6CF7DBDDD483</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7E741F90-209E-4F03-8724-AB778BC62065</string>
+			<string>56832E6E-9090-4489-90F8-6CF7DBDDD483</string>
 			<key>IDESourceControlWCCName</key>
 			<string>waterfall</string>
 		</dict>

@@ -167,6 +167,7 @@ void TestLayer3::update(){
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::draw(){
+    //    ofEnableSmoothing();
     
     ofBackground(0, 0, 0, 0);
     compositeImg.draw(0,0,ofGetWidth(),ofGetHeight());
@@ -180,20 +181,28 @@ void TestLayer3::draw(){
     float x[num], y[num];
     float centerX[num], centerY[num];
     int radius = ofRandom(10,30);
-    
+    int pos[num];
+    //    if(ellipse == 1){
     for (int i=0; i<num; i++) {
         //        if (contourFinder.blobs[i].boundingRect.x>100) {
         
         centerX[i] = contourFinder.blobs[i].boundingRect.x*3;
         centerY[i] = contourFinder.blobs[i].boundingRect.y*2.9;
-        int pos = (centerY[i] * ofGetWidth()) + centerX[i];
+        pos[i] = (centerY[i] * ofGetWidth()) + centerX[i];
+        compositeImgPixels[i] = (centerY[i] * ofGetWidth()) + centerX[i];
+        unsigned char r = compositeImgPixels[3*i];
+        unsigned char g = compositeImgPixels[3*i+1];
+        unsigned char b = compositeImgPixels[3*i+2];
+        //        cout<<r;
         
-        for (float ang=0; ang<=360; ang++) {
-            x[i] = centerX[i] + (radius * cos(ang)) + ofRandom(0,5);
-            y[i] = centerY[i] + (radius * sin(ang)) + ofRandom(0,5);
-            ofSetColor(r[pos],g[pos],b[pos],ofRandom(10,100));
-            ofEllipse(x[i],y[i],2,2);
-        }
+        //        for (float ang=0; ang<=360; ang++) {
+        //            x[i] = centerX[i] + (radius * cos(ang)) + ofRandom(0,5);
+        //            y[i] = centerY[i] + (radius * sin(ang)) + ofRandom(0,5);
+        ofNoFill();
+        ofSetLineWidth(ofRandom(0,100));
+        ofSetColor(r,g,b);
+        ofCircle(centerX[i],centerY[i],ofRandom(35));
+        //        }
         
         //        }
     }

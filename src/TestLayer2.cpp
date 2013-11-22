@@ -14,8 +14,8 @@ void TestLayer2::draw(){
     
     //          ********************    PARTICLES     ********************
     
-    for (int i = 0; i < NUM; i++) {
-        p[i].draw();
-    }
+//    for (int i = 0; i < NUM; i++) {
+//        p[i].draw();
+//    }
     
 }
