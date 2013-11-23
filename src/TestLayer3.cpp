@@ -20,6 +20,12 @@ void TestLayer3::setup(){
 	bLearnBakground = true;
 	threshold = 100;
     
+    for (int n=0; n<nPixels; n++) {
+        r[n] = 150;
+        g[n] = -150;
+        b[n] = -130;
+        a[n] = -100;
+    }
 }
 
 //--------------------------------------------------------------------------------------------------------------
@@ -59,13 +65,17 @@ void TestLayer3::update(){
     
     for (int i=0; i<nPixels; i++) {
         if (grayPixels[i] == 0) {
-            compositeImgPixels[3*i] = 140;
-            compositeImgPixels[3*i+1] = 140;
-            compositeImgPixels[3*i+2] = 10;
+            compositeImgPixels[3*i] = (sampleImgPixels[3*i]+r[i])*2;
+            compositeImgPixels[3*i+1] = (sampleImgPixels[3*i+1]+g[i])*2;
+            compositeImgPixels[3*i+2] = (sampleImgPixels[3*i+2]+b[i])*2;
+            compositeImgPixels[3*i+3] = (sampleImgPixels[3*i+3]+a[i])*2;
+            
         }else{
             compositeImgPixels[3*i] = sampleImgPixels[3*i]+r[i];
             compositeImgPixels[3*i+1] = sampleImgPixels[3*i+1]+g[i];
             compositeImgPixels[3*i+2] = sampleImgPixels[3*i+2]+b[i];
+            compositeImgPixels[3*i+3] = sampleImgPixels[3*i+3]+a[i];
+            
         }
     }
     
@@ -77,7 +87,11 @@ void TestLayer3::update(){
         if(time1 < 500){
             
             for (int i=0; i<nPixels; i++) {
-                if (g[i]<255){ g[i]++; }else{ g[i]=0; }
+                if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
+                if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
+                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
+                
             }
             time1++;
             if(time1 == 200)bLearnBakground = true;
@@ -89,6 +103,7 @@ void TestLayer3::update(){
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
                 if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold >= 0) threshold --;
             end1 = true;
@@ -109,6 +124,7 @@ void TestLayer3::update(){
                 if (r[i]<255){ r[i]++; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.5; }else{ g[i]=0; }
                 if (b[i]<255){ b[i]+0.1; }else{ b[i]=0; }
+                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold < 20) threshold ++;
             end0 = false;
@@ -130,6 +146,7 @@ void TestLayer3::update(){
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]++; }else{ g[i]=0; }
                 if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold < 100) threshold +=2;
             end1 = false;
@@ -151,6 +168,7 @@ void TestLayer3::update(){
                 if (r[i]<255){ r[i]++; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.5; }else{ g[i]=0; }
                 if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold > 30) threshold --;
             end2 = false;
@@ -167,8 +185,8 @@ void TestLayer3::update(){
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::draw(){
-    //    ofEnableSmoothing();
-    
+    ofEnableAlphaBlending();
+
     ofBackground(0, 0, 0, 0);
     compositeImg.draw(0,0,ofGetWidth(),ofGetHeight());
     contourFinder.draw(0,0,ofGetWidth(),ofGetHeight());
@@ -178,35 +196,34 @@ void TestLayer3::draw(){
     //          ********************    CIRCLES     ********************
     
     int num = contourFinder.blobs.size();
-    float x[num], y[num];
+    float x[num],y[num];
     float centerX[num], centerY[num];
-    int radius = ofRandom(10,30);
+//    int radius = ofRandom(10,70);
     int pos[num];
-    //    if(ellipse == 1){
+    
     for (int i=0; i<num; i++) {
         //        if (contourFinder.blobs[i].boundingRect.x>100) {
         
         centerX[i] = contourFinder.blobs[i].boundingRect.x*3;
         centerY[i] = contourFinder.blobs[i].boundingRect.y*2.9;
-        pos[i] = (centerY[i] * ofGetWidth()) + centerX[i];
+        
         compositeImgPixels[i] = (centerY[i] * ofGetWidth()) + centerX[i];
         unsigned char r = compositeImgPixels[3*i];
         unsigned char g = compositeImgPixels[3*i+1];
         unsigned char b = compositeImgPixels[3*i+2];
-        //        cout<<r;
         
-        //        for (float ang=0; ang<=360; ang++) {
-        //            x[i] = centerX[i] + (radius * cos(ang)) + ofRandom(0,5);
-        //            y[i] = centerY[i] + (radius * sin(ang)) + ofRandom(0,5);
-        ofNoFill();
-        ofSetLineWidth(ofRandom(0,100));
-        ofSetColor(r,g,b);
-        ofCircle(centerX[i],centerY[i],ofRandom(35));
-        //        }
+        
+//        for (float ang=0; ang<=360; ang++) {
+//            x[i] = centerX[i] + (radius * cos(ang));
+//            y[i] = centerY[i] + (radius * sin(ang));
+            ofFill();
+            ofSetLineWidth(ofRandom(0,50));
+            ofSetColor(r,g,b,50);
+            ofCircle(centerX[i],centerY[i],ofRandom(30));
+//        }
         
         //        }
     }
     
-    
-    
 }
+

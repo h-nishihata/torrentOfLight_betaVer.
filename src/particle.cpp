@@ -15,7 +15,7 @@ particle::particle(){
 void particle::draw(){
     
     ofFill();
-    ofSetColor(255,0,0);
+    ofSetColor(255,255,255);
     ofEllipse(x, y, r, r);
     
 }

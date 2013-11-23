@@ -2,7 +2,8 @@
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer2::update(){
-    
+    ofEnableAlphaBlending();
+    ofBackground(0, 0, 0,0);
     for (int i = 0; i < NUM; i++) {
         p[i].update();
     }

@@ -25,7 +25,6 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
-
     
     TestLayer1 *layer1;
     TestLayer2 *layer2;

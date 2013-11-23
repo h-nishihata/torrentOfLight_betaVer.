@@ -13,6 +13,7 @@ public:
     void setup();
     void update();
     void draw();
+
     
     ofVideoPlayer vidPlayer;
     
@@ -34,6 +35,8 @@ public:
     float r[480*312];
     float g[480*312];
     float b[480*312];
+    float a[480*312];
+    
     unsigned char* compositeImgPixels = new unsigned char[nPixels*3];
     
     int time1 = 0;
