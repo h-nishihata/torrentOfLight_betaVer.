@@ -3,7 +3,7 @@
 #include "ofxLayer.h"
 #define OFX_LAYER_DEFINE_LAYER_CLASS(Klass) public: const char* getClassName() const { return #Klass; } \
 unsigned int getClassID() const { return ofx::Layer::Type2Int<Klass>::value(); }
-
+#include "ofxOpenCv.h"
 #include "particle.h"
 #define NUM 10000
 
@@ -12,8 +12,44 @@ public:
     
     OFX_LAYER_DEFINE_LAYER_CLASS(TestLayer2)
     
+    void setup();
     void update();
     void draw();
- 
+    
+    ofVideoPlayer vidPlayer;
+    
+    ofxCvColorImage colorImg;
+    ofxCvColorImage colorImgHSV;
+    ofxCvColorImage colorImgRGB;
+    
+    ofxCvGrayscaleImage grayImage;
+    ofxCvGrayscaleImage grayBg;
+    ofxCvGrayscaleImage grayDiff;
+    ofxCvContourFinder contourFinder;
+    
+    ofxCvColorImage compositeImg;
+    
+    int threshold;
+    bool bLearnBakground;
+    
+    int nPixels = 960*540;
+    float r[960*540];
+    float g[960*540];
+    float b[960*540];
+    float a[960*540];
+    
+    unsigned char* compositeImgPixels = new unsigned char[nPixels*3];
+    
+    int time1 = 0;
+    int time2 = 0;
+    int time3 = 0;
+    int time4 = 0;
+    
+    bool end0 = true;
+    bool end1 = false;
+    bool end2 = false;
+    bool end3 = false;
+    bool end4 = false;
+
     particle p[NUM];
 };

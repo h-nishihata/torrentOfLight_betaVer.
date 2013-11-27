@@ -31,11 +31,11 @@ public:
     int threshold;
     bool bLearnBakground;
     
-    int nPixels = 480*312;
-    float r[480*312];
+    int nPixels = 960*540;
+    float r[960*540];
     float g[480*312];
-    float b[480*312];
-    float a[480*312];
+    float b[960*540];
+    float a[960*540];
     
     unsigned char* compositeImgPixels = new unsigned char[nPixels*3];
     

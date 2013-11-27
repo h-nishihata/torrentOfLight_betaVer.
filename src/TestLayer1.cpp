@@ -6,9 +6,7 @@ void TestLayer1::update(){
 }
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer1::draw(){
-    
+
     ofBackground(0, 0, 0, 0);
-//    ofSetColor(0, 255, 0, 50);
-//    ofCircle(ofGetWidth()/2, ofGetHeight()/2, 500);
     
 }

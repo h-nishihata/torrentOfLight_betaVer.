@@ -2,26 +2,25 @@
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::setup(){
-    
-    ofSetFrameRate(15);
+    ofSetFrameRate(30);
     ofEnableAlphaBlending();
     
-    vidPlayer.loadMovie("kegonfalls.mov");
+    vidPlayer.loadMovie("kegonfalls_01.mov");
     vidPlayer.play();
     
-    colorImg.allocate(480,312);
-    colorImgHSV.allocate(480,312);
+    colorImg.allocate(960,540);
+    colorImgHSV.allocate(960,540);
     
-	grayImage.allocate(480,312);
-	grayBg.allocate(480,312);
-	grayDiff.allocate(480,312);
-    compositeImg.allocate(480, 312);
+	grayImage.allocate(960,540);
+	grayBg.allocate(960,540);
+	grayDiff.allocate(960,540);
+    compositeImg.allocate(960,540);
     
 	bLearnBakground = true;
 	threshold = 100;
     
     for (int n=0; n<nPixels; n++) {
-        r[n] = 150;
+        r[n] = -100;
         g[n] = -150;
         b[n] = -130;
         a[n] = -100;
@@ -35,7 +34,7 @@ void TestLayer3::update(){
     
     //      ********************    CONVERT IMAGE   ********************
     
-    colorImg.setFromPixels(vidPlayer.getPixels(), 480,312);
+    colorImg.setFromPixels(vidPlayer.getPixels(), 960,540);
     colorImgHSV = colorImg;
     colorImgHSV.convertRgbToHsv();
     
@@ -49,7 +48,7 @@ void TestLayer3::update(){
     grayDiff.absDiff(grayBg, grayImage);
     grayDiff.threshold(threshold);
     
-    contourFinder.findContours(grayDiff, 20, (340*240)/3, 10, true);
+    contourFinder.findContours(grayDiff, 20, (960*540)/3, 10, true);
 	
     colorImgRGB = colorImg;
     colorImgRGB.convertHsvToRgb();
@@ -89,7 +88,7 @@ void TestLayer3::update(){
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
-                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (b[i]<255){ b[i]+0.5; }else{ b[i]=0; }
                 if (a[i]>0){ a[i]--; }else{ a[i]=100; }
                 
             }
@@ -102,7 +101,7 @@ void TestLayer3::update(){
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
-                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (b[i]<255){ b[i]+0.1; }else{ b[i]=0; }
                 if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold >= 0) threshold --;
@@ -121,7 +120,7 @@ void TestLayer3::update(){
         }else{
             
             for (int i=0; i<nPixels; i++) {
-                if (r[i]<255){ r[i]++; }else{ r[i]=0; }
+                if (r[i]<255){ r[i]+0.1; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.5; }else{ g[i]=0; }
                 if (b[i]<255){ b[i]+0.1; }else{ b[i]=0; }
                 if (a[i]>0){ a[i]--; }else{ a[i]=100; }
@@ -144,8 +143,8 @@ void TestLayer3::update(){
             
             for (int i=0; i<nPixels; i++) {
                 if (r[i]<255){ r[i]+0.5; }else{ r[i]=0; }
-                if (g[i]<255){ g[i]++; }else{ g[i]=0; }
-                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (g[i]<255){ g[i]+0.1; }else{ g[i]=0; }
+                if (b[i]<255){ b[i]+0.1; }else{ b[i]=0; }
                 if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold < 100) threshold +=2;
@@ -165,9 +164,9 @@ void TestLayer3::update(){
         }else{
             
             for (int i=0; i<nPixels; i++) {
-                if (r[i]<255){ r[i]++; }else{ r[i]=0; }
+                if (r[i]<255){ r[i]+0.1; }else{ r[i]=0; }
                 if (g[i]<255){ g[i]+0.5; }else{ g[i]=0; }
-                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
+                if (b[i]<255){ b[i]+0.1; }else{ b[i]=0; }
                 if (a[i]>0){ a[i]--; }else{ a[i]=100; }
             }
             if(threshold > 30) threshold --;
@@ -179,28 +178,22 @@ void TestLayer3::update(){
     
     
     
-    compositeImg.setFromPixels(compositeImgPixels,480,312);
-    
+    compositeImg.setFromPixels(compositeImgPixels,960,540);
 }
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::draw(){
-    ofEnableAlphaBlending();
 
-    ofBackground(0, 0, 0, 0);
-    compositeImg.draw(0,0,ofGetWidth(),ofGetHeight());
-    contourFinder.draw(0,0,ofGetWidth(),ofGetHeight());
-    
-    
-    
-    //          ********************    CIRCLES     ********************
+//    ofSetColor(255, 0, 0)   ;
+//    ofCircle(300, 300, 1000);
+//        //          ********************    CIRCLES     ********************
     
     int num = contourFinder.blobs.size();
     float x[num],y[num];
     float centerX[num], centerY[num];
 //    int radius = ofRandom(10,70);
     int pos[num];
-    
+    int radius = ofRandom(40);
     for (int i=0; i<num; i++) {
         //        if (contourFinder.blobs[i].boundingRect.x>100) {
         
@@ -216,10 +209,11 @@ void TestLayer3::draw(){
 //        for (float ang=0; ang<=360; ang++) {
 //            x[i] = centerX[i] + (radius * cos(ang));
 //            y[i] = centerY[i] + (radius * sin(ang));
-            ofFill();
-            ofSetLineWidth(ofRandom(0,50));
-            ofSetColor(r,g,b,50);
-            ofCircle(centerX[i],centerY[i],ofRandom(30));
+            ofNoFill();
+            ofSetLineWidth(ofRandom(3,20));
+            ofSetColor(r,g,b);
+            ofCircle(centerX[i],centerY[i],radius);
+
 //        }
         
         //        }
