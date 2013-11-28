@@ -33,7 +33,7 @@ public:
     
     int nPixels = 960*540;
     float r[960*540];
-    float g[480*312];
+    float g[960*540];
     float b[960*540];
     float a[960*540];
     

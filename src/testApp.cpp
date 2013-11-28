@@ -5,7 +5,7 @@ void testApp::setup(){
 
     ofSetVerticalSync(true);
     ofBackground(50);
-    mng.setup(1440,900);
+    mng.setup(1920,1080);
     
     layer1 = mng.createLayer<TestLayer1>();
     layer2 = mng.createLayer<TestLayer2>();

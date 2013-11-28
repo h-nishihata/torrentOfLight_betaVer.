@@ -5,7 +5,7 @@ void TestLayer3::setup(){
     ofSetFrameRate(30);
     ofEnableAlphaBlending();
     
-    vidPlayer.loadMovie("kegonfalls_01.mov");
+    vidPlayer.loadMovie("kegonfalls.mp4");
     vidPlayer.play();
     
     colorImg.allocate(960,540);
@@ -59,15 +59,15 @@ void TestLayer3::update(){
     
     unsigned char* grayPixels = grayDiff.getPixels();
     unsigned char* sampleImgPixels = colorImgRGB.getPixels();
-    unsigned char* sampleImgPixels2 = colorImgHSV.getPixels();
+    //    unsigned char* sampleImgPixels2 = colorImgHSV.getPixels();
     
     
     for (int i=0; i<nPixels; i++) {
         if (grayPixels[i] == 0) {
-            compositeImgPixels[3*i] = (sampleImgPixels[3*i]+r[i])*2;
-            compositeImgPixels[3*i+1] = (sampleImgPixels[3*i+1]+g[i])*2;
-            compositeImgPixels[3*i+2] = (sampleImgPixels[3*i+2]+b[i])*2;
-            compositeImgPixels[3*i+3] = (sampleImgPixels[3*i+3]+a[i])*2;
+            compositeImgPixels[3*i] = sampleImgPixels[3*i]+r[i];
+            compositeImgPixels[3*i+1] = sampleImgPixels[3*i+1]+g[i];
+            compositeImgPixels[3*i+2] = sampleImgPixels[3*i+2]+b[i];
+            compositeImgPixels[3*i+3] = sampleImgPixels[3*i+3]+a[i];
             
         }else{
             compositeImgPixels[3*i] = sampleImgPixels[3*i]+r[i];
@@ -183,41 +183,34 @@ void TestLayer3::update(){
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::draw(){
-
-//    ofSetColor(255, 0, 0)   ;
-//    ofCircle(300, 300, 1000);
-//        //          ********************    CIRCLES     ********************
+    
+    //    ofBackground(0,0,0,0);
+    ofSetColor(140, 140, 30);
+    compositeImg.draw(-95,-50,ofGetWidth()*1.1,ofGetHeight()*1.1);
+    
+    //          ********************    CIRCLES     ********************
+    
     
     int num = contourFinder.blobs.size();
-    float x[num],y[num];
-    float centerX[num], centerY[num];
-//    int radius = ofRandom(10,70);
-    int pos[num];
+    int centerX[num], centerY[num];
     int radius = ofRandom(40);
-    for (int i=0; i<num; i++) {
-        //        if (contourFinder.blobs[i].boundingRect.x>100) {
-        
-        centerX[i] = contourFinder.blobs[i].boundingRect.x*3;
-        centerY[i] = contourFinder.blobs[i].boundingRect.y*2.9;
-        
-        compositeImgPixels[i] = (centerY[i] * ofGetWidth()) + centerX[i];
-        unsigned char r = compositeImgPixels[3*i];
-        unsigned char g = compositeImgPixels[3*i+1];
-        unsigned char b = compositeImgPixels[3*i+2];
-        
-        
-//        for (float ang=0; ang<=360; ang++) {
-//            x[i] = centerX[i] + (radius * cos(ang));
-//            y[i] = centerY[i] + (radius * sin(ang));
-            ofNoFill();
-            ofSetLineWidth(ofRandom(3,20));
-            ofSetColor(r,g,b);
-            ofCircle(centerX[i],centerY[i],radius);
-
-//        }
-        
-        //        }
-    }
     
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+
+    for (int n=0; n<num; n++) {
+        centerX[n] = contourFinder.blobs[n].boundingRect.x;
+        centerY[n] = contourFinder.blobs[n].boundingRect.y;
+        
+        red = compositeImgPixels[ (centerY[n] * 960 + centerX[n]) *3 ];
+        green = compositeImgPixels[ (centerY[n] * 960 + centerX[n]) *3 +1];
+        blue = compositeImgPixels[ (centerY[n] * 960 + centerX[n]) *3 +2];
+        
+//        ofNoFill();
+//        ofSetLineWidth(ofRandom(3,20));
+        ofSetColor(red,green,blue);
+        ofCircle(2*centerX[n],2*centerY[n],radius);
+    }
 }
 
