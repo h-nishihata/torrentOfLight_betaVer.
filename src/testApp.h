@@ -31,6 +31,6 @@ public:
     TestLayer3 *layer3;
     
     ofxLayer::Manager mng;
-    
+//    int time_ = TestLayer3.;
 };
 

@@ -12,9 +12,15 @@ public:
     
     OFX_LAYER_DEFINE_LAYER_CLASS(TestLayer2)
     
-
+    void setup();
     void update();
     void draw();
     
+    float time;
+    bool flag;
+    float a;
     particle p[NUM];
+
+    
+    ofVideoPlayer b;
 };

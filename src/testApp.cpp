@@ -4,8 +4,8 @@
 void testApp::setup(){
 
     ofSetVerticalSync(true);
-    ofBackground(50);
-    mng.setup(1920,1080);
+    ofBackground(100,100,5);
+    mng.setup(1440,900);
     
     layer1 = mng.createLayer<TestLayer1>();
     layer2 = mng.createLayer<TestLayer2>();
@@ -64,7 +64,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-    
+
 }
 
 //--------------------------------------------------------------

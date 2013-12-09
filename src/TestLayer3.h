@@ -13,9 +13,10 @@ public:
     void setup();
     void update();
     void draw();
-
+    void keyPressed(int key);
     
     ofVideoPlayer vidPlayer;
+    ofSoundPlayer sndPlayer;
     
     ofxCvColorImage colorImg;
     ofxCvColorImage colorImgHSV;
@@ -28,7 +29,7 @@ public:
     
     ofxCvColorImage compositeImg;
     
-    int threshold;
+    float threshold;
     bool bLearnBakground;
     
     int nPixels = 960*540;
@@ -37,12 +38,14 @@ public:
     float b[960*540];
     float a[960*540];
     
+    float r_;
+    float g_;
+    float b_;
+    
     unsigned char* compositeImgPixels = new unsigned char[nPixels*3];
     
-    int time1 = 0;
-    int time2 = 0;
-    int time3 = 0;
-    int time4 = 0;
+    float time_;
+
     
     bool end0 = true;
     bool end1 = false;
