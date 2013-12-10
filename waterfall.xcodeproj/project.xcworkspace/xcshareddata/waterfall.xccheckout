@@ -5,19 +5,23 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B6E77136-3913-414F-936C-7EC18A4976F3</string>
+	<string>649A99A2-1936-4673-8DBC-7402404C1887</string>
 	<key>IDESourceControlProjectName</key>
 	<string>waterfall</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>56832E6E-9090-4489-90F8-6CF7DBDDD483</key>
+		<key>1C602D52-E06B-45D6-88DC-1BB1C0C827E5</key>
+		<string>https://github.com/h-nishihata/waterfall</string>
+		<key>E5255CF8-E1E9-4EA4-8860-19BBACA01BCF</key>
 		<string>https://github.com/h-nishihata/waterfall</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>waterfall.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>56832E6E-9090-4489-90F8-6CF7DBDDD483</key>
+		<key>1C602D52-E06B-45D6-88DC-1BB1C0C827E5</key>
+		<string>../../../waterfall</string>
+		<key>E5255CF8-E1E9-4EA4-8860-19BBACA01BCF</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,16 +29,24 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>56832E6E-9090-4489-90F8-6CF7DBDDD483</string>
+	<string>E5255CF8-E1E9-4EA4-8860-19BBACA01BCF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>56832E6E-9090-4489-90F8-6CF7DBDDD483</string>
+			<string>1C602D52-E06B-45D6-88DC-1BB1C0C827E5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>waterfall</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E5255CF8-E1E9-4EA4-8860-19BBACA01BCF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>waterfall 14.05</string>
 		</dict>
 	</array>
 </dict>

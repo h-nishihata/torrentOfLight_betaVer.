@@ -3,7 +3,7 @@
 bool start_mov;
 //--------------------------------------------------------------------------------------------------------------
 void testApp::setup(){
-    
+    sender.setup(HOST, PORT);
     ofSetVerticalSync(true);
     ofBackground(100,100,5);
     mng.setup(1440,900);
@@ -43,15 +43,14 @@ void testApp::keyPressed(int key){
     if (key == ' ') {
         
         start_mov = true;
-//
-//        ofxOscMessage m;
-//        
-//        m.setAddress("/mouse/position");
-//        
-//        m.addIntArg(key);
-//        
-//        sender.sendMessage(m);
-//        
+        
+        ofxOscMessage m;
+        
+        m.setAddress("/mouse/position");
+        
+        m.addIntArg(key);
+        
+        sender.sendMessage(m);
     }
 }
 
