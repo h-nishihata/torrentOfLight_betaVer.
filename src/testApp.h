@@ -1,5 +1,6 @@
 #ifndef _TEST_APP
 #define _TEST_APP
+
 #include "ofMain.h"
 #include "ofxLayer.h"
 
@@ -29,7 +30,7 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-
+    
     ofxOscSender sender;
     
     TestLayer1 *layer1;

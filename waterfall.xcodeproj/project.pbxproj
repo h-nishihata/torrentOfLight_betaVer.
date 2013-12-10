@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0546d1a38e13bd319cc9755b /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9bf3aa0d4faa89d0f8a0e545 /* OscReceivedElements.cpp */; };
-		116569D51856C87F00D693E0 /* ofxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 116569D01856C87F00D693E0 /* ofxLayer.cpp */; };
-		116569D61856C87F00D693E0 /* ofxLayerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 116569D31856C87F00D693E0 /* ofxLayerManager.cpp */; };
-		118BA9D61856D13D00885457 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 118BA9CE1856D13D00885457 /* particle.cpp */; };
-		118BA9D71856D13D00885457 /* TestLayer1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 118BA9D01856D13D00885457 /* TestLayer1.cpp */; };
-		118BA9D81856D13D00885457 /* TestLayer2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 118BA9D21856D13D00885457 /* TestLayer2.cpp */; };
-		118BA9D91856D13D00885457 /* TestLayer3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 118BA9D41856D13D00885457 /* TestLayer3.cpp */; };
+		11979D131856FB3D00A252FC /* TestLayer1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D111856FB3D00A252FC /* TestLayer1.cpp */; };
+		11979D1C1856FBD900A252FC /* ofxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D171856FBD900A252FC /* ofxLayer.cpp */; };
+		11979D1D1856FBD900A252FC /* ofxLayerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D1A1856FBD900A252FC /* ofxLayerManager.cpp */; };
+		11979D211856FC3300A252FC /* TestLayer2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D1F1856FC3300A252FC /* TestLayer2.cpp */; };
+		11979D241856FC6400A252FC /* TestLayer3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D221856FC6400A252FC /* TestLayer3.cpp */; };
+		11979D2A1856FCA300A252FC /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11979D281856FCA300A252FC /* particle.cpp */; };
 		169d3c72fde6c5590a1616f5 /* ofxCvFloatImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7b6a03390302d5a2c9f0e4ab /* ofxCvFloatImage.cpp */; };
 		1d5f3298c2fa073628012944 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021 /* ofxCvContourFinder.cpp */; };
 		250a95ba26587be85db0a353 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ce9c7160245b19131dae6128 /* ofxCvColorImage.cpp */; };
@@ -98,19 +98,19 @@
 		0aed834ce4dec5260af302a2 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscParameterSync.cpp; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.cpp; sourceTree = SOURCE_ROOT; };
 		0cf0aa3895d28e97d8a1e4a9 /* ground_truth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ground_truth.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/ground_truth.h; sourceTree = SOURCE_ROOT; };
 		114b872696817cc33990fc83 /* imgproc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = imgproc.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc.hpp; sourceTree = SOURCE_ROOT; };
-		116569D01856C87F00D693E0 /* ofxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayer.cpp; sourceTree = "<group>"; };
-		116569D11856C87F00D693E0 /* ofxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayer.h; sourceTree = "<group>"; };
-		116569D21856C87F00D693E0 /* ofxLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerConstants.h; sourceTree = "<group>"; };
-		116569D31856C87F00D693E0 /* ofxLayerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayerManager.cpp; sourceTree = "<group>"; };
-		116569D41856C87F00D693E0 /* ofxLayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerManager.h; sourceTree = "<group>"; };
-		118BA9CE1856D13D00885457 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particle.cpp; path = ../../waterfall/src/particle.cpp; sourceTree = "<group>"; };
-		118BA9CF1856D13D00885457 /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = particle.h; path = ../../waterfall/src/particle.h; sourceTree = "<group>"; };
-		118BA9D01856D13D00885457 /* TestLayer1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLayer1.cpp; path = ../../waterfall/src/TestLayer1.cpp; sourceTree = "<group>"; };
-		118BA9D11856D13D00885457 /* TestLayer1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLayer1.h; path = ../../waterfall/src/TestLayer1.h; sourceTree = "<group>"; };
-		118BA9D21856D13D00885457 /* TestLayer2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLayer2.cpp; path = ../../waterfall/src/TestLayer2.cpp; sourceTree = "<group>"; };
-		118BA9D31856D13D00885457 /* TestLayer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLayer2.h; path = ../../waterfall/src/TestLayer2.h; sourceTree = "<group>"; };
-		118BA9D41856D13D00885457 /* TestLayer3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLayer3.cpp; path = ../../waterfall/src/TestLayer3.cpp; sourceTree = "<group>"; };
-		118BA9D51856D13D00885457 /* TestLayer3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLayer3.h; path = ../../waterfall/src/TestLayer3.h; sourceTree = "<group>"; };
+		11979D111856FB3D00A252FC /* TestLayer1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer1.cpp; sourceTree = "<group>"; };
+		11979D121856FB3D00A252FC /* TestLayer1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer1.h; sourceTree = "<group>"; };
+		11979D171856FBD900A252FC /* ofxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayer.cpp; sourceTree = "<group>"; };
+		11979D181856FBD900A252FC /* ofxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayer.h; sourceTree = "<group>"; };
+		11979D191856FBD900A252FC /* ofxLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerConstants.h; sourceTree = "<group>"; };
+		11979D1A1856FBD900A252FC /* ofxLayerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLayerManager.cpp; sourceTree = "<group>"; };
+		11979D1B1856FBD900A252FC /* ofxLayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLayerManager.h; sourceTree = "<group>"; };
+		11979D1F1856FC3300A252FC /* TestLayer2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer2.cpp; sourceTree = "<group>"; };
+		11979D201856FC3300A252FC /* TestLayer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer2.h; sourceTree = "<group>"; };
+		11979D221856FC6400A252FC /* TestLayer3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer3.cpp; sourceTree = "<group>"; };
+		11979D231856FC6400A252FC /* TestLayer3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer3.h; sourceTree = "<group>"; };
+		11979D281856FCA300A252FC /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
+		11979D291856FCA300A252FC /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = particle.h; sourceTree = "<group>"; };
 		1e95efd35ed9c5d97f2f015e /* timer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = timer.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/timer.h; sourceTree = SOURCE_ROOT; };
 		20f35afadaf0068b067e713f /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		23640f57df6c4bb6bfc5da4c /* PacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/PacketListener.h; sourceTree = SOURCE_ROOT; };
@@ -189,7 +189,7 @@
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		E4B69B5B0A3A1756003C02F2 /* waterfallDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waterfallDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -326,23 +326,23 @@
 			name = ml;
 			sourceTree = "<group>";
 		};
-		116569CE1856C87F00D693E0 /* ofxLayer-master */ = {
+		11979D151856FBD900A252FC /* ofxLayer-master */ = {
 			isa = PBXGroup;
 			children = (
-				116569CF1856C87F00D693E0 /* src */,
+				11979D161856FBD900A252FC /* src */,
 			);
 			name = "ofxLayer-master";
 			path = "../../../addons/ofxLayer-master";
 			sourceTree = "<group>";
 		};
-		116569CF1856C87F00D693E0 /* src */ = {
+		11979D161856FBD900A252FC /* src */ = {
 			isa = PBXGroup;
 			children = (
-				116569D01856C87F00D693E0 /* ofxLayer.cpp */,
-				116569D11856C87F00D693E0 /* ofxLayer.h */,
-				116569D21856C87F00D693E0 /* ofxLayerConstants.h */,
-				116569D31856C87F00D693E0 /* ofxLayerManager.cpp */,
-				116569D41856C87F00D693E0 /* ofxLayerManager.h */,
+				11979D171856FBD900A252FC /* ofxLayer.cpp */,
+				11979D181856FBD900A252FC /* ofxLayer.h */,
+				11979D191856FBD900A252FC /* ofxLayerConstants.h */,
+				11979D1A1856FBD900A252FC /* ofxLayerManager.cpp */,
+				11979D1B1856FBD900A252FC /* ofxLayerManager.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -522,7 +522,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				116569CE1856C87F00D693E0 /* ofxLayer-master */,
+				11979D151856FBD900A252FC /* ofxLayer-master */,
 				a0b90d3b0adb9c1716816714 /* ofxOpenCv */,
 				e6053ab7fec63d5f83825b88 /* ofxOsc */,
 			);
@@ -592,17 +592,17 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				118BA9CE1856D13D00885457 /* particle.cpp */,
-				118BA9CF1856D13D00885457 /* particle.h */,
-				118BA9D01856D13D00885457 /* TestLayer1.cpp */,
-				118BA9D11856D13D00885457 /* TestLayer1.h */,
-				118BA9D21856D13D00885457 /* TestLayer2.cpp */,
-				118BA9D31856D13D00885457 /* TestLayer2.h */,
-				118BA9D41856D13D00885457 /* TestLayer3.cpp */,
-				118BA9D51856D13D00885457 /* TestLayer3.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				11979D111856FB3D00A252FC /* TestLayer1.cpp */,
+				11979D121856FB3D00A252FC /* TestLayer1.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
+				11979D1F1856FC3300A252FC /* TestLayer2.cpp */,
+				11979D201856FC3300A252FC /* TestLayer2.h */,
+				11979D221856FC6400A252FC /* TestLayer3.cpp */,
+				11979D231856FC6400A252FC /* TestLayer3.h */,
+				11979D281856FCA300A252FC /* particle.cpp */,
+				11979D291856FCA300A252FC /* particle.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -860,32 +860,32 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				fb09c6b2a1da0ea217240cb8 /* ofxCvGrayscaleImage.cpp in Sources */,
+				11979D2A1856FCA300A252FC /* particle.cpp in Sources */,
+				11979D241856FC6400A252FC /* TestLayer3.cpp in Sources */,
 				250a95ba26587be85db0a353 /* ofxCvColorImage.cpp in Sources */,
 				169d3c72fde6c5590a1616f5 /* ofxCvFloatImage.cpp in Sources */,
+				11979D131856FB3D00A252FC /* TestLayer1.cpp in Sources */,
 				d3301f6a0b43bb293ed97c1d /* ofxCvShortImage.cpp in Sources */,
 				1d5f3298c2fa073628012944 /* ofxCvContourFinder.cpp in Sources */,
 				e212c821d1064b92dd953a42 /* ofxCvHaarFinder.cpp in Sources */,
 				63020f16c7e8ded980111241 /* ofxCvImage.cpp in Sources */,
 				8f5205aef8861ef234f0651a /* ofxOscSender.cpp in Sources */,
 				72a929d3561b8232a182abfc /* ofxOscBundle.cpp in Sources */,
+				11979D1C1856FBD900A252FC /* ofxLayer.cpp in Sources */,
 				640279ee111671bd026cb013 /* ofxOscReceiver.cpp in Sources */,
 				5864ad82e20f15536d054ea3 /* ofxOscMessage.cpp in Sources */,
-				118BA9D61856D13D00885457 /* particle.cpp in Sources */,
-				118BA9D91856D13D00885457 /* TestLayer3.cpp in Sources */,
-				118BA9D81856D13D00885457 /* TestLayer2.cpp in Sources */,
 				4adb88e2fb52e76a471065de /* ofxOscParameterSync.cpp in Sources */,
 				a29d8c96ae042eceaa1bd4f3 /* NetworkingUtilsWin.cpp in Sources */,
-				116569D51856C87F00D693E0 /* ofxLayer.cpp in Sources */,
 				28090deb5109115003e8f1c5 /* UdpSocketWin.cpp in Sources */,
 				510cafe035e576a4e1502d52 /* UdpSocket.cpp in Sources */,
+				11979D211856FC3300A252FC /* TestLayer2.cpp in Sources */,
 				67fe4c7b15c2f0478c8126c2 /* NetworkingUtils.cpp in Sources */,
 				ade367465d2a8ebad4c7a8d9 /* IpEndpointName.cpp in Sources */,
 				0546d1a38e13bd319cc9755b /* OscReceivedElements.cpp in Sources */,
 				62545d179c94265ca1389d4a /* OscOutboundPacketStream.cpp in Sources */,
 				c4782ecc372420ace0615b74 /* OscPrintReceivedElements.cpp in Sources */,
-				116569D61856C87F00D693E0 /* ofxLayerManager.cpp in Sources */,
 				879a251454401bc0b6e4f238 /* OscTypes.cpp in Sources */,
-				118BA9D71856D13D00885457 /* TestLayer1.cpp in Sources */,
+				11979D1D1856FBD900A252FC /* ofxLayerManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
