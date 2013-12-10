@@ -2,13 +2,11 @@
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::setup(){
+    
     ofSetFrameRate(30);
     ofEnableAlphaBlending();
     
     vidPlayer.loadMovie("kegonfalls_05.mp4");
-            //    sndPlayer.loadSound("testSound_01.wav");
-            //    sndPlayer.setLoop(false);
-    vidPlayer.play();
     
     colorImg.allocate(960,540);
     colorImgHSV.allocate(960,540);
@@ -28,13 +26,17 @@ void TestLayer3::setup(){
         
         a[n] = 0;
     }
-    
+           vidPlayer.play();
 }
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::update(){
-    
-    vidPlayer.update();
+    if (start_mov == true) {
+
+       vidPlayer.update();
+    }
+
+
     time_ = vidPlayer.getPosition();
 
     

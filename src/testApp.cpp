@@ -1,8 +1,9 @@
 #include "testApp.h"
 
+bool start_mov;
 //--------------------------------------------------------------------------------------------------------------
 void testApp::setup(){
-
+    
     ofSetVerticalSync(true);
     ofBackground(100,100,5);
     mng.setup(1440,900);
@@ -26,25 +27,32 @@ void testApp::update(){
     
     mng.update();
     
-   }
+}
 
 //--------------------------------------------------------------------------------------------------------------
 void testApp::draw(){
     
-//        ofTranslate(0,ofGetHeight(),0);
-//        ofRotateZ(-90);
-    
     ofEnableAlphaBlending();
     mng.draw();
-
+    
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
     
-//    if (key == '1') layer1->moveUp();
-//    if (key == '2') layer1->moveDown();
-
+    if (key == ' ') {
+        
+        start_mov = true;
+//
+//        ofxOscMessage m;
+//        
+//        m.setAddress("/mouse/position");
+//        
+//        m.addIntArg(key);
+//        
+//        sender.sendMessage(m);
+//        
+    }
 }
 
 //--------------------------------------------------------------
@@ -64,7 +72,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------

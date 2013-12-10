@@ -6,8 +6,6 @@
 #include "TestLayer2.h"
 #include "TestLayer3.h"
 
-
-
 class testApp : public ofBaseApp{
     
 public:
@@ -31,6 +29,6 @@ public:
     TestLayer3 *layer3;
     
     ofxLayer::Manager mng;
-//    int time_ = TestLayer3.;
+    
 };
 
