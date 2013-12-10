@@ -195,8 +195,7 @@ void TestLayer3::draw(){
     
     ofEnableAlphaBlending();
     ofBackground(0,0,0,0);
-    //    ofSetColor(90, 15, 15, 20);
-    compositeImg.draw(-95,-50,ofGetWidth()*1.1,ofGetHeight()*1.1);
+    compositeImg.draw(-95,-50,ofGetWidth()*1.2,ofGetHeight()*1.1);
     
     //          ********************    CIRCLES     ********************
     

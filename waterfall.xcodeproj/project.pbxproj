@@ -593,16 +593,16 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				11979D111856FB3D00A252FC /* TestLayer1.cpp */,
-				11979D121856FB3D00A252FC /* TestLayer1.h */,
+				11979D281856FCA300A252FC /* particle.cpp */,
+				11979D291856FCA300A252FC /* particle.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
+				11979D111856FB3D00A252FC /* TestLayer1.cpp */,
+				11979D121856FB3D00A252FC /* TestLayer1.h */,
 				11979D1F1856FC3300A252FC /* TestLayer2.cpp */,
 				11979D201856FC3300A252FC /* TestLayer2.h */,
 				11979D221856FC6400A252FC /* TestLayer3.cpp */,
 				11979D231856FC6400A252FC /* TestLayer3.h */,
-				11979D281856FCA300A252FC /* particle.cpp */,
-				11979D291856FCA300A252FC /* particle.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

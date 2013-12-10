@@ -5,6 +5,7 @@
 unsigned int getClassID() const { return ofx::Layer::Type2Int<Klass>::value(); }
 
 extern bool start_mov;
+extern     float time_;
 class TestLayer3 : public ofxLayer::Layer{
 public:
     
@@ -43,7 +44,7 @@ public:
     
     unsigned char* compositeImgPixels = new unsigned char[nPixels*3];
     
-    float time_;
+//    float time_;
     
     
     bool end0 = true;
