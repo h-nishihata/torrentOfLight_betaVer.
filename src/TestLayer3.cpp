@@ -3,7 +3,7 @@
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::setup(){
     ofSetFrameRate(30);
-    ofEnableAlphaBlending();
+    
     
     vidPlayer.loadMovie("kegonfalls_05.mp4");
     
@@ -17,7 +17,7 @@ void TestLayer3::setup(){
     compositeImg.allocate(960,540);
     
 	bLearnBakground = true;
-	threshold = 235;
+	threshold = 240;
     
     for (int n=0; n<nPixels; n++) {
         r[n] = -100;
@@ -31,6 +31,7 @@ void TestLayer3::setup(){
 
 //--------------------------------------------------------------------------------------------------------------
 void TestLayer3::update(){
+    ofEnableAlphaBlending();
     if (start_mov == true) {
         vidPlayer.play();
         vidPlayer.update();
@@ -90,27 +91,14 @@ void TestLayer3::update(){
     //          ********************   PHASE 1   ********************
     
     if (end0 == true) {
-        if(time_ < 0.11622){
+        if(time_ < 0.01){
             
-            if(threshold > 0) threshold -= 0.05;
+            if(threshold < 235) threshold += 10;
             
         }else{
             //　上昇　１
             if(threshold > 0) threshold -= 5;
-            //            for (int i=0; i<nPixels; i++) {
-            //                if (r[i]<255){ r[i]+=0.1; }else{ r[i]=0; }
-            //                if (g[i]<255){ g[i]+=0.1; }else{ g[i]=0; }
-            //                if (b[i]<255){ b[i]+=0.1; }else{ b[i]=0; }
-            //                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
-            //            }
-            //            for (int i=0; i<nPixels; i++) {
-            //                if (grayPixels[i] == 1){
-            //                    compositeImgPixels[3*i] = (sampleImgPixels[3*i])*2;
-            //                    compositeImgPixels[3*i+1] = (sampleImgPixels[3*i+1])*2;
-            //                    compositeImgPixels[3*i+2] = (sampleImgPixels[3*i+2])*2;
-            //                    compositeImgPixels[3*i+3] = 50;
-            //                }
-            //            }
+            
             end1 = true;
         }
     }
@@ -119,15 +107,16 @@ void TestLayer3::update(){
     
     
     if (end1 == true) {
-        if (time_ < (4*60+10)*30) {
+        if (time_ < 0.5) {
             
         }else{
-            
-            //            for (int i=0; i<nPixels; i++) {
-            //                if (r[i]<255)r[i]+=0.5;
-            //                a[i]=100;
-            //            }
-            //            if(threshold < 150) threshold ++;
+            for (int i=0; i<nPixels; i++) {
+                if (r[i]<0){ r[i]+=0.1; }else{ r[i]=-200; }
+                if (g[i]<0){ g[i]+=0.05; }else{ g[i]=-200; }
+                if (b[i]<0){ b[i]+=0.05; }else{ b[i]=-200; }
+                if (a[i]<0){ a[i]++; }else{ a[i]=-200; }
+            }
+            if(threshold < 150) threshold ++;
             end0 = false;
             end3 = true;
         }
@@ -137,18 +126,26 @@ void TestLayer3::update(){
     
     if (end2 == true){
         
-        if (time_ < 0.605147) {
-            //　全体増を見せる
+        if (time_ < 0.6) {
         }else{
             //　上昇　２
             for (int i=0; i<nPixels; i++) {
-                if (r[i]<255){ r[i]+=0.5; }else{ r[i]=0; }
-                if (g[i]>0){ g[i]-=0.5; }else{ g[i]=0; }
-                if (b[i]>0){ b[i]--; }else{ b[i]=0; }
-                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
+                if (grayPixels[i] == 0) {
+                    compositeImgPixels[3*i] = sampleImgPixels[3*i];
+                    compositeImgPixels[3*i+1] = sampleImgPixels[3*i+1];
+                    compositeImgPixels[3*i+2] = sampleImgPixels[3*i+2];
+                    compositeImgPixels[3*i+3] = sampleImgPixels[3*i+3];
+                    
+                }
+            }
+            for (int i=0; i<nPixels; i++) {
+                if (r[i]<0){ r[i]++; }else{ r[i]=-200; }
+                if (g[i]<0){ g[i]++; }else{ g[i]=-200; }
+                if (b[i]<0){ b[i]++; }else{ b[i]=-200; }
+                if (a[i]<0){ a[i]++; }else{ a[i]=-200; }
             }
             
-            if(threshold > 0) threshold -=10;
+            if(threshold < 240) threshold +=10;
             end1 = false;
             end3 = true;
         }
@@ -158,29 +155,37 @@ void TestLayer3::update(){
     
     if (end3 == true){
         
-        if (time_ < (6*60+32)*30) {
+        if (time_ < 0.72) {
             
         }else{
-            //            threshold = 235;
-            //            for (int i=0; i<nPixels; i++) {
-            //                if (r[i]>0){ r[i]-=0.5; }else{ r[i]=0; }
-            //                if (g[i]>0){ g[i]-=0.5; }else{ g[i]=0; }
-            //                if (b[i]<255){ b[i]++; }else{ b[i]=0; }
-            //                if (a[i]>0){ a[i]--; }else{ a[i]=100; }
-            //            }
-            //
-            //            end2 = false;
-            //            end4 = true;
+            if(threshold > 20) threshold --;
+            for (int i=0; i<nPixels; i++) {
+                if (grayPixels[i] == 0) {
+                    compositeImgPixels[3*i] = sampleImgPixels[3*i]*2;
+                    compositeImgPixels[3*i+1] = sampleImgPixels[3*i+1]*2;
+                    compositeImgPixels[3*i+2] = sampleImgPixels[3*i+2]*2;
+                    compositeImgPixels[3*i+3] = sampleImgPixels[3*i+3];
+                    
+                }
+            }
+            for (int i=0; i<nPixels; i++) {
+                if (r[i]<0){ r[i]+=0.1; }else{ r[i]=-200; }
+                if (g[i]<0){ g[i]++; }else{ g[i]=-200; }
+                if (b[i]<0){ b[i]+=0.5; }else{ b[i]=-200; }
+                if (a[i]<0){ a[i]++; }else{ a[i]=-200; }
+            }
+            
+            end2 = false;
+            end4 = true;
             
         }
     }
     
     //  reset
     if(end4 == true){
-        if(time_ < (8*60+59)*30){
+        if(time_ == 0){
             
         }else{
-            time_ = 0;
             end1 = end2 = end3 = end4 = false;
             end0 = true;
         }

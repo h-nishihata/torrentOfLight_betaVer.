@@ -5,7 +5,7 @@ float time_;
 void TestLayer2::setup(){
     ofSetFrameRate(30);
 //    flag = true;
-    a = 150;
+    a = 180;
 //    b.loadMovie("kegonfalls_05.mp4");
     
     
@@ -49,7 +49,7 @@ void TestLayer2::draw(){
     
     //　　暗転　１
     //　　0.195379　〜 0.203663
-    if (time_ > 0.2 && time_ < 0.22) {
+    if (time_ > 0.1965 && time_ < 0.21) {
         ofSetColor(0, 0, 0, 255);
         ofRect(0, 0, ofGetWidth(), ofGetHeight());
     }
@@ -58,14 +58,14 @@ void TestLayer2::draw(){
     
     //　暗転　２
     //　0.726002　〜　0.739955
-    if (time_ > 0.73 && time_ < 0.75) {
+    if (time_ > 0.72 && time_ < 0.728) {
         ofSetColor(0, 0, 0, 255);
         ofRect(0, 0, ofGetWidth(), ofGetHeight());
     }
     
     //　暗転　3
     //　0.914103　〜　0.92295
-    if (time_ > 0.92 && time_ < 0.94) {
+    if (time_ > 0.91 && time_ < 0.94) {
         ofSetColor(0, 0, 0, 255);
         ofRect(0, 0, ofGetWidth(), ofGetHeight());
     }
@@ -73,7 +73,7 @@ void TestLayer2::draw(){
     //　暗転　4
     //　0.973707
     
-    if (time_ > 0.98) {
+    if (time_ > 0.97) {
         ofSetColor(0, 0, 0, 255);
         ofRect(0, 0, ofGetWidth(), ofGetHeight());
     }
