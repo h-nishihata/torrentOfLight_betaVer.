@@ -1,2 +1,2 @@
-torrent_of_light_betaVer.
+torrentOfLight_betaVer.
 =========
